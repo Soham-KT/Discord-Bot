@@ -21,7 +21,8 @@ async def send_message(message: Message, user_message: str) -> None:
         return
 
     # print(user_message.split()[0])
-    if (bot_activate := user_message.split()[0] == 'assassins') or (bot_activate := user_message.split()[0] == 'Assassins'):
+    if (bot_activate := user_message.split()[0] == 'assassins') or (
+    bot_activate := user_message.split()[0] == 'Assassins'):
         user_message = user_message[len(user_message.split()[0]):]
         if is_private := user_message[0] == '?':
             user_message = user_message[1:]
