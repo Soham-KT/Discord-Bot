@@ -7,6 +7,7 @@ from discord import Intents, Interaction, Member
 
 from ShantyCode.help_cog import help_cog
 from ShantyCode.music_cog import music_cog
+from GrandmasterAI.GmAI import gm_response
 
 # loading token
 load_dotenv()
@@ -28,6 +29,12 @@ async def on_ready():
 async def assassinate(interaction: Interaction, user: Member):
     await interaction.response.send_message(f"{user.mention} was assassinated")
 
+
+# ---------------------------------------------------------------------------------------- bot testing code
+@bot.tree.command()
+async def grandmaster(interaction: Interaction, user_message: str):
+    response: str = gm_response(user_message)
+    await interaction.response.send_message(response)
 
 # ---------------------------------------------------------------------------------------- shanty
 bot.remove_command('help')
