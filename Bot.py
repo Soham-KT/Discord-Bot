@@ -33,7 +33,9 @@ async def assassinate(interaction: Interaction, user: Member):
 # ---------------------------------------------------------------------------------------- bot testing code
 @bot.tree.command()
 async def grandmaster(interaction: Interaction, user_message: str):
+    print(user_message)
     response: str = gm_response(user_message)
+    print(response)
     await interaction.response.send_message(response)
 
 # ---------------------------------------------------------------------------------------- shanty

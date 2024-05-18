@@ -9,6 +9,7 @@ client = OpenAI(
     api_key=os.environ.get("CHATGPT_API_KEY"),
 )
 
+
 def gm_response(prompt: str) -> str:
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
