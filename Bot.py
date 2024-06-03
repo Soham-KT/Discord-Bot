@@ -3,7 +3,7 @@ from typing import Final
 import os
 from dotenv import load_dotenv
 from discord.ext import commands
-from discord import Intents, Interaction, Member
+from discord import Intents, Interaction, Member, File
 
 from ShantyCode.help_cog import help_cog
 from ShantyCode.music_cog import music_cog
@@ -24,13 +24,13 @@ async def on_ready():
     await bot.tree.sync()
 
 
-# ---------------------------------------------------------------------------------------- bot testing code
+# ---------------------------------------------------------------------------------------- pings the user mentioned
 @bot.tree.command()
 async def assassinate(interaction: Interaction, user: Member):
     await interaction.response.send_message(f"{user.mention} was assassinated")
 
 
-# ---------------------------------------------------------------------------------------- bot testing code
+# ---------------------------------------------------------------------------------------- gives the AI response
 @bot.tree.command()
 async def grandmaster(interaction: Interaction, user_message: str):
     print(user_message)
