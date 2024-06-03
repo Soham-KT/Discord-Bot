@@ -1,6 +1,7 @@
 import asyncio
 from typing import Final
 import os
+import random
 from dotenv import load_dotenv
 from discord.ext import commands
 from discord import Intents, Interaction, Member, File
@@ -28,6 +29,7 @@ async def on_ready():
 @bot.tree.command()
 async def assassinate(interaction: Interaction, user: Member):
     await interaction.response.send_message(f"{user.mention} was assassinated")
+    await interaction.channel.send(file=File('GIFS/' + str(random.choice(os.listdir('GIFS')))))
 
 
 # ---------------------------------------------------------------------------------------- gives the AI response
