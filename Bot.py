@@ -28,8 +28,7 @@ async def on_ready():
 # ---------------------------------------------------------------------------------------- pings the user mentioned
 @bot.tree.command()
 async def assassinate(interaction: Interaction, user: Member):
-    await interaction.response.send_message(f"{user.mention} was assassinated")
-    await interaction.channel.send(file=File('GIFS/' + str(random.choice(os.listdir('GIFS')))))
+    await interaction.channel.send(file=File('GIFS/' + str(random.choice(os.listdir('GIFS')))), content=f"{user.mention} was assassinated")
 
 
 # ---------------------------------------------------------------------------------------- gives the AI response
