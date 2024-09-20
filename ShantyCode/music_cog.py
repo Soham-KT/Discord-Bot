@@ -4,6 +4,10 @@ from discord.ext import commands
 from youtubesearchpython import VideosSearch
 from yt_dlp import YoutubeDL
 import asyncio
+from discord import Intents
+
+intents: Intents = Intents.all()
+bot = commands.Bot(command_prefix='/', intents=intents)
 
 
 class music_cog(commands.Cog):
